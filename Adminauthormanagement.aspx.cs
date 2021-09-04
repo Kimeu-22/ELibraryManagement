@@ -16,7 +16,7 @@ namespace ELibraryManagement
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GridView1.DataBind();
         }
 
         //ADD button click, creates a new record into the database
