@@ -73,9 +73,14 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="Adminpublishermanagement.aspx" />
     <Content Include="Adminusermanagement.aspx" />
+    <Content Include="bookInventory\b1.jpg" />
+    <Content Include="bookInventory\b2.jpg" />
+    <Content Include="bookInventory\b5.jpg" />
+    <Content Include="bookInventory\books1.png" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\jquery.js" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="css\customerstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
