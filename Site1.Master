@@ -16,13 +16,16 @@
      <%--our custom css--%>
      <link href="css/customerstylesheet.css" rel="stylesheet" />
 
+     
      <%--jquery js--%>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-     <%--popper js--%>
-    <script src="bootstrap/js/popper.min.js"></script>
      <%--bootstrap js--%>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <%--Datatables js--%>
+     <!--jquery-->
+     <script src="bootstrap/js/jquery.js"></script>
+     <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+     <%--Datatables js--%>
     <script src="datatables/js/jquery.dataTables.min.js"></script>
    
      
