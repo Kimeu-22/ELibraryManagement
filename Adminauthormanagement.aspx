@@ -4,7 +4,7 @@
     <!--Inserting the command to enable easier interaction with data-->
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.table').prepend($("thead").append($(this).find("tr:first"))).DataTable();
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
         });
     </script>
 </asp:Content>
@@ -68,18 +68,29 @@
                 <div class="card border-0">
 
                     <div class="card-body">
-                        <center>
+                        <div class="row">
+                            <center>
                             <h3>Author List</h3>
-                        </center>
-                        <%--Assigning a data to grid view from a database 
+                            </center>
+                        </div>
+                        <div class="row">
+                            <%--Assigning a data to grid view from a database 
                             by use of a SqlDatasource as it can get access to a database--%>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ELibraryDBConnectionString %>" SelectCommand="SELECT * FROM [author_master_tbl]"></asp:SqlDataSource>
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
-                    </div>
-
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ELibraryDBConnectionString %>" 
+                                SelectCommand="SELECT * FROM [author_master_tbl]"></asp:SqlDataSource>
+                            </div>
+                        <div class="row">
+                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" DataSourceID="SqlDataSource1" 
+                                AutoGenerateColumns="False" DataKeyNames="author_id">
+                                <Columns>
+                                    <asp:BoundField DataField="author_id" HeaderText="author_id" ReadOnly="True" SortExpression="author_id" />
+                                    <asp:BoundField DataField="author_name" HeaderText="author_name" ReadOnly="True" SortExpression="author_name" />
+                                </Columns>
+                            </asp:GridView>
+                            </div>                        
+                        </div>
                 </div>
             </div>
         </div>
     </div>
-
 </asp:Content>
