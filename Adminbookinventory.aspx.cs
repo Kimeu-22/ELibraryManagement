@@ -66,14 +66,23 @@ namespace ELibraryManagement
                 con.Open();
             }
 
+            //author details
             SqlCommand cmd = new SqlCommand("select author_name from author_master_tbl", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
             DropDownList3.DataSource = dt;
             DropDownList3.DataValueField = "author_name";
             DropDownList3.DataBind();
+
+            //publisher details
+            cmd = new SqlCommand("select publisher_name from publisher_master_tbl", con);
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
+            DropDownList2.DataSource = dt;
+            DropDownList2.DataValueField = "publisher_name";
+            DropDownList2.DataBind();
 
         }
     }
