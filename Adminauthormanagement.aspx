@@ -60,13 +60,9 @@
                 <a href="Homepage.aspx"><< Back To Home</a>
             </div>
 
-            <div class="col-1">
-                <hr width="1" size="400" />
-            </div>
 
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="card border-0">
-
                     <div class="card-body">
                         <div class="row">
                             <center>
