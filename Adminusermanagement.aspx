@@ -81,7 +81,6 @@
                         <asp:TextBox class="form-control" ID="TextBox9" runat="server" Rows="2" TextMode="MultiLine" placeholder="My Home" ReadOnly="True"></asp:TextBox>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="d-grid gap-2 col-8 mx-auto">
                         <asp:Button class="btn btn-danger mt-2 mb-2" ID="Button2" runat="server" Text="Delete User Permanently" OnClick="Button2_Click" />

@@ -15,7 +15,8 @@ namespace ELibraryManagement
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //on page load, display the data from the database
+            GridView1.DataBind();
         }
 
         //GO button click
