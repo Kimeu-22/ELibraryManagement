@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#table').DataTable();
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
         });
     </script>
 </asp:Content>
@@ -56,20 +56,28 @@
                 </div><a href="Homepage.aspx"> << Back To Home</a>
             </div>
 
-            <div class="col-md-7">
-                <div class="card border-0">
+             <div class="col-md-7">
+                 <div class="card border-0">
                     <div class="card-body">
-                        <center><h4>Publisher's Details</h4></center> 
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ELibraryDBConnectionString %>" SelectCommand="SELECT * FROM [publisher_master_tbl]"></asp:SqlDataSource>
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="publisher_id" DataSourceID="SqlDataSource1">
+                        <div class="row">
+                             <center><h4>Publisher's Details</h4></center>
+                        </div>
+                        <div class="row">
+                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ELibraryDBConnectionString %>" 
+                                 SelectCommand="SELECT * FROM [publisher_master_tbl]"></asp:SqlDataSource>
+                        </div>
+                        <div class="col">
+                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" 
+                                AutoGenerateColumns="False" DataKeyNames="publisher_id" DataSourceID="SqlDataSource1">
                             <Columns>
                                 <asp:BoundField DataField="publisher_id" HeaderText="publisher_id" ReadOnly="True" SortExpression="publisher_id" />
-                                <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
+                                <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" ReadOnly="True" />
                             </Columns>
                         </asp:GridView>
+                        </div>                        
                     </div>
                 </div>
+             </div>                
             </div>
-        </div>
     </div>
 </asp:Content>
