@@ -10,7 +10,6 @@
                 reader.onload = function (e) {
                     $('#imgview').attr('src', e.target.result);
                 };
-
                 reader.readAsDataURL(input.files[0]);
             }
         }
@@ -177,7 +176,7 @@
 
                 <div class="row mb-1">
                     <div class="col-4">
-                        <asp:Button CssClass="btn btn-success form-control" ID="Button2" runat="server" Text="Add" />
+                        <asp:Button CssClass="btn btn-success form-control" ID="Button2" runat="server" Text="Add" OnClick="Button2_Click1" />
                     </div>
                     <div class="col-4">
                         <asp:Button CssClass="btn btn-primary form-control" ID="Button3" runat="server" Text="Update" />
@@ -200,7 +199,21 @@
 
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-borderd" ID="GridView1" runat="server"></asp:GridView>
+                                <asp:GridView class="table table-striped table-borderd" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
+                                    <Columns>
+                                        <asp:BoundField DataField="book_id" HeaderText="book_id" ReadOnly="True" SortExpression="book_id" />
+                                        <asp:BoundField DataField="book_name" HeaderText="book_name" SortExpression="book_name" />
+                                        <asp:BoundField DataField="genre" HeaderText="genre" SortExpression="genre" />
+                                        <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
+                                        <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
+                                        <asp:BoundField DataField="language" HeaderText="language" SortExpression="language" />
+                                        <asp:BoundField DataField="edition" HeaderText="edition" SortExpression="edition" />
+                                        <asp:BoundField DataField="book_cost" HeaderText="book_cost" SortExpression="book_cost" />
+                                        <asp:BoundField DataField="actual_stock" HeaderText="actual_stock" SortExpression="actual_stock" />
+                                        <asp:BoundField DataField="current_stock" HeaderText="current_stock" SortExpression="current_stock" />
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ELibraryDBConnectionString %>" SelectCommand="SELECT * FROM [book_master_tbl]"></asp:SqlDataSource>
                             </div>
                         </div>
                     </div>
