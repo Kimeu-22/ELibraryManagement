@@ -159,7 +159,7 @@ namespace ELibraryManagement
                 cmd.Parameters.AddWithValue("@book_img_link", filePath);
 
                 cmd.ExecuteNonQuery();
-                //con.Close();
+                con.Close();
                 Response.Write("<script>alert('Book details added successfully')</script>");
                 GridView1.DataBind();
             }
