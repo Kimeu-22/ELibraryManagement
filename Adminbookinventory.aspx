@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label>Pages</label>
+                        <label>Issued Books</label>
                         <div class="form-group">
                             <asp:TextBox class="form-control" ID="TextBox9" runat="server" TextMode="Number" ReadOnly="True"></asp:TextBox>
                         </div>
@@ -182,10 +182,10 @@
                         <asp:Button CssClass="btn btn-success form-control" ID="Button2" runat="server" Text="Add" OnClick="Button2_Click1" />
                     </div>
                     <div class="col-4">
-                        <asp:Button CssClass="btn btn-primary form-control" ID="Button3" runat="server" Text="Update" />
+                        <asp:Button CssClass="btn btn-primary form-control" ID="Button3" runat="server" Text="Update" OnClick="Button3_Click1" />
                     </div>
                     <div class="col-4">
-                        <asp:Button CssClass="btn btn-danger form-control" ID="Button4" runat="server" Text="Delete" />
+                        <asp:Button CssClass="btn btn-danger form-control" ID="Button4" runat="server" Text="Delete" OnClick="Button4_Click" />
                     </div>
                 </div>
             </div>
@@ -204,7 +204,10 @@
                             <div class="col">
                                 <asp:GridView class="table table-striped table-borderd" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
                                     <Columns>
-                                        <asp:BoundField DataField="book_id" HeaderText="ID" ReadOnly="True" SortExpression="book_id" />
+                                        <asp:BoundField DataField="book_id" HeaderText="ID" ReadOnly="True" SortExpression="book_id" >
+                                        
+                                        <ItemStyle Font-Bold="True" />
+                                        </asp:BoundField>
                                         
                                         <asp:TemplateField>
 
