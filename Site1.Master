@@ -65,7 +65,7 @@
 
                <ul class="navbar-nav">
                    <li class="nav-item active">
-                       <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" Visible="False">View Books</asp:LinkButton>
+                       <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" Visible="True">View Books</asp:LinkButton>
                    </li>
 
                     <li class="nav-item active">
